@@ -1,0 +1,7 @@
+Ideas for future actions
+    search google
+        need selenium?
+
+    play a song
+        spotify API?
+
