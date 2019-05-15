@@ -53,7 +53,7 @@ class PersonalAssistant:
         for phrase in self.phrase_list:
             if self.message_contains_phrase(user_message, phrase):
                 self.perform_action(phrase, user_message)
-                self.perform_dialogue_for_action(phrase, user_message)
+                self.perform_dialogue_for_action(phrase)
 
     def speak(self, text):
         self.engine.say(text)
@@ -75,6 +75,11 @@ class PersonalAssistant:
         Each phrase has an associated ACTION (something to perform) and a DIALOGUE (spoken to user by text to speech)
         """
         self.phrase_list = {
+            "Search": {
+                "ACTION": self.search_google,
+                "DIALOGUE": "Searching"
+            },
+
             "Google": {
                 "ACTION": self.open_chrome_tab,
                 "DIALOGUE": "Opening a new tab"
@@ -96,13 +101,20 @@ class PersonalAssistant:
     # ACTIONS
     # -------
     def perform_action(self, phrase, user_message):
-        self.phrase_list[phrase]['ACTION'](phrase, user_message)
+        self.phrase_list[phrase]['ACTION'](user_message)
 
-    def perform_dialogue_for_action(self, phrase, user_message):
+    def perform_dialogue_for_action(self, phrase):
         self.speak(self.phrase_list[phrase]['DIALOGUE'])
 
-    def open_chrome_tab(self, phrase, user_message):
+    def open_chrome_tab(self, phrase):
         webbrowser.open_new_tab(config.GOOGLE_HOMEPAGE)
 
-    def shutdown(self, phrase, user_message):
+    def search_google(self, user_message):
+        search_terms = user_message.split('search')[-1]
+        search_terms = search_terms.split('for')[-1]
+
+        url = config.GOOGLE_HOMEPAGE + '/search?q={}'.format(search_terms)
+        webbrowser.open_new_tab(url)
+
+    def shutdown(self, user_message):
         self.active = False
