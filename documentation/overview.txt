@@ -1,0 +1,8 @@
+Current Tasks
+    1. Restructure so that we have "action" objects, and I can create new action classes
+
+Overview
+    This project is designed to be a personal assistant, which will analyze your voice commands and
+    reference it against a list of phrases. Each of these phrases ("search", for example) will have an associated
+    action (ie: opening a new tab and performing a google search)
+

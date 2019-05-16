@@ -3,6 +3,9 @@ import re
 import config
 import webbrowser
 import pyttsx3 as text_to_speech
+from bs4 import BeautifulSoup
+import urllib.request
+import urllib.parse
 
 
 class PersonalAssistant:
@@ -37,7 +40,7 @@ class PersonalAssistant:
 
     def convert_to_text(self, audio):
         try:
-            recognized_audio = self.recognizer.recognize_google(audio)
+            recognized_audio = self.recognizer.recognize_google(audio).lower()
             print("Google thinks you said: " + recognized_audio)
             return recognized_audio
 
@@ -77,7 +80,7 @@ class PersonalAssistant:
         self.phrase_list = {
             "Search": {
                 "ACTION": self.search_google,
-                "DIALOGUE": "Searching"
+                "DIALOGUE": "Searching now"
             },
 
             "Google": {
@@ -93,6 +96,11 @@ class PersonalAssistant:
             "Shut Down": {
                 "ACTION": self.shutdown,
                 "DIALOGUE": "Shutting down. Have a nice day!"
+            },
+
+            "Play": {
+                "ACTION": self.play_song,
+                "DIALOGUE": "Playing song now"
             },
         }
 
@@ -118,3 +126,15 @@ class PersonalAssistant:
 
     def shutdown(self, user_message):
         self.active = False
+
+    def play_song(self, user_message):
+        song_name = user_message.split('play')[-1]
+        search_url = "https://www.youtube.com/results?search_query=" + urllib.parse.quote(song_name)
+
+        # utilize bs4 to find first video link from this search
+        response = urllib.request.urlopen(search_url)
+        bs4 = BeautifulSoup(response.read(), 'html.parser')
+        video = bs4.find(attrs={'class':'yt-uix-tile-link'})
+
+        video_url = config.YOUTUBE_HOMEPAGE + video['href']
+        webbrowser.open_new_tab(video_url)

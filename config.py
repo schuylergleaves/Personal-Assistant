@@ -1,8 +1,8 @@
 # URL's
 GOOGLE_HOMEPAGE = "https://www.google.com"
+YOUTUBE_HOMEPAGE = "https://www.youtube.com"
 
 # ASSISTANT SETTINGS
-ASSISTANT_NAME = "Jarvis"
 PAUSE_THRESHOLD  = 0.5
 ENERGY_THRESHOLD = 2000
 

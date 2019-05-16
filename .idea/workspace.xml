@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1a58d7f4-2063-4425-bad2-9a13302aaac5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/overview.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/personal_assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/personal_assistant.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/personal_assistant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+            <state relative-caret-position="-11">
+              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
                 <element signature="e#160#509#0" />
@@ -25,18 +27,24 @@
                 <element signature="e#722#906#0" />
                 <element signature="e#951#1037#0" />
                 <element signature="e#1085#1417#0" />
-                <element signature="e#1473#1807#0" />
-                <element signature="e#1844#1898#0" />
-                <element signature="e#1933#1951#0" />
-                <element signature="e#1991#2115#0" />
-                <element signature="e#2186#2239#0" />
+                <element signature="e#1473#1793#0" />
+                <element signature="e#1830#1884#0" />
+                <element signature="e#1919#1937#0" />
+                <element signature="e#1977#2101#0" />
+                <element signature="e#2172#2225#0" />
                 <element signature="e#2268#3074#0" />
-                <element signature="e#3067#3123#0" />
-                <element signature="e#3198#3246#0" />
-                <element signature="e#3309#3356#0" />
-                <element signature="e#3485#3698#0" />
-                <element signature="e#3412#3431#0" />
+                <element signature="e#3179#3227#0" />
+                <element signature="e#3288#3336#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/documentation/overview.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="86" lean-forward="true" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -61,17 +69,18 @@
         <option value="$PROJECT_DIR$/personal_assistant/__init__.py" />
         <option value="$PROJECT_DIR$/personal_assistant/actions.py" />
         <option value="$PROJECT_DIR$/launcher.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/TODO.txt" />
+        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/personal_assistant.py" />
+        <option value="$PROJECT_DIR$/documentation/overview.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="875" />
-    <option name="y" value="-45" />
-    <option name="width" value="2400" />
-    <option name="height" value="1110" />
+    <option name="x" value="-110" />
+    <option name="y" value="-20" />
+    <option name="width" value="3000" />
+    <option name="height" value="1120" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -80,12 +89,32 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Personal Assistant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Personal Assistant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Personal Assistant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Personal Assistant" type="462c0819:PsiDirectoryNode" />
+              <item name="documentation" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/launcher.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sglea\Desktop\Programming\Active Projects\Personal Assistant\documentation" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -138,7 +167,7 @@
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24950495" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31221122" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -163,8 +192,8 @@
     <entry file="file://$PROJECT_DIR$/personal_assistant/actions.py" />
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -175,17 +204,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.txt">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="150">
+          <caret line="648" selection-start-line="648" selection-end-line="648" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/personal_assistant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state relative-caret-position="-11">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <element signature="e#160#509#0" />
@@ -193,18 +222,22 @@
             <element signature="e#722#906#0" />
             <element signature="e#951#1037#0" />
             <element signature="e#1085#1417#0" />
-            <element signature="e#1473#1807#0" />
-            <element signature="e#1844#1898#0" />
-            <element signature="e#1933#1951#0" />
-            <element signature="e#1991#2115#0" />
-            <element signature="e#2186#2239#0" />
+            <element signature="e#1473#1793#0" />
+            <element signature="e#1830#1884#0" />
+            <element signature="e#1919#1937#0" />
+            <element signature="e#1977#2101#0" />
+            <element signature="e#2172#2225#0" />
             <element signature="e#2268#3074#0" />
-            <element signature="e#3067#3123#0" />
-            <element signature="e#3198#3246#0" />
-            <element signature="e#3309#3356#0" />
-            <element signature="e#3485#3698#0" />
-            <element signature="e#3412#3431#0" />
+            <element signature="e#3179#3227#0" />
+            <element signature="e#3288#3336#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/documentation/overview.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="86" lean-forward="true" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
         </state>
       </provider>
     </entry>
