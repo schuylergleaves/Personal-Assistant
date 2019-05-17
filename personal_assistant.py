@@ -1,11 +1,8 @@
-import speech_recognition
-import re
-import config
-import webbrowser
 import pyttsx3 as text_to_speech
-from bs4 import BeautifulSoup
-import urllib.request
-import urllib.parse
+import speech_recognition
+import config
+import re
+from actions.chrome_actions import open_chrome_tab, search_google, play_song
 
 
 class PersonalAssistant:
@@ -72,6 +69,15 @@ class PersonalAssistant:
     def message_contains_phrase(self, user_message, string):
         return re.search(string, user_message, re.IGNORECASE)
 
+    def perform_action(self, phrase, user_message):
+        self.phrase_list[phrase]['ACTION'](user_message)
+
+    def perform_dialogue_for_action(self, phrase):
+        self.speak(self.phrase_list[phrase]['DIALOGUE'])
+
+    def shutdown(self, user_message):
+        self.active = False
+
     def setup_phrase_list(self):
         """
         The phrase list contains all phrases which the personal assistant will recognize.
@@ -79,17 +85,17 @@ class PersonalAssistant:
         """
         self.phrase_list = {
             "Search": {
-                "ACTION": self.search_google,
+                "ACTION": search_google,
                 "DIALOGUE": "Searching now"
             },
 
             "Google": {
-                "ACTION": self.open_chrome_tab,
+                "ACTION": open_chrome_tab,
                 "DIALOGUE": "Opening a new tab"
             },
 
             "New Tab": {
-                "ACTION": self.open_chrome_tab,
+                "ACTION": open_chrome_tab,
                 "DIALOGUE": "Opening a new tab"
             },
 
@@ -99,42 +105,7 @@ class PersonalAssistant:
             },
 
             "Play": {
-                "ACTION": self.play_song,
+                "ACTION": play_song,
                 "DIALOGUE": "Playing song now"
             },
         }
-
-
-    # -------
-    # ACTIONS
-    # -------
-    def perform_action(self, phrase, user_message):
-        self.phrase_list[phrase]['ACTION'](user_message)
-
-    def perform_dialogue_for_action(self, phrase):
-        self.speak(self.phrase_list[phrase]['DIALOGUE'])
-
-    def open_chrome_tab(self, phrase):
-        webbrowser.open_new_tab(config.GOOGLE_HOMEPAGE)
-
-    def search_google(self, user_message):
-        search_terms = user_message.split('search')[-1]
-        search_terms = search_terms.split('for')[-1]
-
-        url = config.GOOGLE_HOMEPAGE + '/search?q={}'.format(search_terms)
-        webbrowser.open_new_tab(url)
-
-    def shutdown(self, user_message):
-        self.active = False
-
-    def play_song(self, user_message):
-        song_name = user_message.split('play')[-1]
-        search_url = "https://www.youtube.com/results?search_query=" + urllib.parse.quote(song_name)
-
-        # utilize bs4 to find first video link from this search
-        response = urllib.request.urlopen(search_url)
-        bs4 = BeautifulSoup(response.read(), 'html.parser')
-        video = bs4.find(attrs={'class':'yt-uix-tile-link'})
-
-        video_url = config.YOUTUBE_HOMEPAGE + video['href']
-        webbrowser.open_new_tab(video_url)
